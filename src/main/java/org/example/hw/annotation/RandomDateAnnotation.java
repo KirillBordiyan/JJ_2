@@ -11,7 +11,6 @@ public class RandomDateAnnotation {
     private static final String MESSAGE = "Max time cannot be less of min";
     private static final java.util.Random random = new java.util.Random();
 
-    // реализация присвоения значений полю
     public static void processAnnotation(Object obj) {
         Class<?> objClass = obj.getClass();
         for (Field field : objClass.getDeclaredFields()) {
@@ -53,8 +52,6 @@ public class RandomDateAnnotation {
         } catch (Exception e){
             throw new RuntimeException(e.getMessage());
         }
-
-
     }
 
     private static void processRandomDate(Object obj, Field field) {
